@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Http</title>
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+<h1>My posts</h1>
+<template id="single-post">
+    <li class="post-item">
+        <h2></h2>
+        <p></p>
+        <button data-post-id="${id}">SHOW COMMENTS</button>
+    </li>
+</template>
+
+<template id="comments">
+    <li class="comment-item">
+        <h3></h3>
+        <h4></h4>
+        <span></span>
+    </li>
+</template>
+
+<section id="available-posts">
+    <ul class="posts"></ul>
+    <ul class="comments"></ul>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
