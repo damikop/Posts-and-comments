@@ -1,9 +1,13 @@
+
+import axios from "axios";
+import apiConfig from "./apiconfig";
+
 const postListElement = document.querySelector('.posts');
 const postTemplate = document.getElementById('single-post');
 
 const commentListElement = document.querySelector('.comments');
 const commentTemplate = document.getElementById('comments');
-// const showCommentsBtn = document.getElementsByTagName('button');
+const showCommentsBtn = document.getElementsByTagName('button');
 
 // для отображения постов
 const API_URL_posts = 'https://jsonplaceholder.typicode.com/posts';
@@ -18,19 +22,23 @@ function sendHttpRequest(method, url, body) {
     }).then(res => res.json());
 }
 
-try {
-    sendHttpRequest('GET', API_URL_posts).then(posts => {
-        for (const post of posts) {
-            const postEl = document.importNode(postTemplate.content, true);
-            postEl.querySelector('h2').textContent = post.title.toUpperCase();
-            postEl.querySelector('p').textContent = post.body;
-            postEl.querySelector('.post-item').id = post.id;
-            postListElement.appendChild(postEl);
-        }
-    })
-} catch (e) {
-    alert(e)
-}
+axios.get(`${apiConfig}/posts`)
+    .then(response => console.log(response.data))
+    .catch(error => console.log(error));
+
+// try {
+//     sendHttpRequest('GET', API_URL_posts).then(posts => {
+//         for (const post of posts) {
+//             const postEl = document.importNode(postTemplate.content, true);
+//             postEl.querySelector('h2').textContent = post.title.toUpperCase();
+//             postEl.querySelector('p').textContent = post.body;
+//             postEl.querySelector('.post-item').id = post.id;
+//             postListElement.appendChild(postEl);
+//         }
+//     })
+// } catch (e) {
+//     alert(e)
+// }
 // showCommentsBtn.addEventListener('click', async (event) => {
 //
 // });
