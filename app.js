@@ -1,6 +1,7 @@
 
-import axios from "axios";
-import apiConfig from "./apiconfig";
+// import axios from "axios";
+// import config from "./apiconfig";
+import {API_URL_posts, config, API_URL_comments} from "./apiconfig.js";
 
 const postListElement = document.querySelector('.posts');
 const postTemplate = document.getElementById('single-post');
@@ -9,22 +10,25 @@ const commentListElement = document.querySelector('.comments');
 const commentTemplate = document.getElementById('comments');
 const showCommentsBtn = document.getElementsByTagName('button');
 
-// для отображения постов
-const API_URL_posts = 'https://jsonplaceholder.typicode.com/posts';
-// для отображения комментариев к постам
-const API_URL_comments = 'https://jsonplaceholder.typicode.com/comments';
-
-function sendHttpRequest(method, url, body) {
-    return fetch(url,{
-        method,
-        body: JSON.stringify(body),
-        headers: {'Content-type': 'application/json; charset=UTF-8',}
-    }).then(res => res.json());
-}
-
-axios.get(`${apiConfig}/posts`)
+axios.get(`${config.url}/posts`)
     .then(response => console.log(response.data))
     .catch(error => console.log(error));
+
+
+// для отображения постов
+// const API_URL_posts = 'https://jsonplaceholder.typicode.com/posts';
+// для отображения комментариев к постам
+// const API_URL_comments = 'https://jsonplaceholder.typicode.com/comments';
+
+// function sendHttpRequest(method, url, body) {
+//     return fetch(url,{
+//         method,
+//         body: JSON.stringify(body),
+//         headers: {'Content-type': 'application/json; charset=UTF-8',}
+//     }).then(res => res.json());
+// }
+
+
 
 // try {
 //     sendHttpRequest('GET', API_URL_posts).then(posts => {
@@ -58,10 +62,10 @@ axios.get(`${apiConfig}/posts`)
 // }
 
 
-postListElement.addEventListener('click', async (event) => {
-    if (event.target.tagName === 'BUTTON') {
-        // показать айдишку поста и передать ее
-        const id = event.target.closest('li').id;
-        await sendHttpRequest('DELETE', `${API_URL_posts}/${id}`);
-    }
-})
+// postListElement.addEventListener('click', async (event) => {
+//     if (event.target.tagName === 'BUTTON') {
+//         // показать айдишку поста и передать ее
+//         const id = event.target.closest('li').id;
+//         await sendHttpRequest('DELETE', `${API_URL_posts}/${id}`);
+//     }
+// })
