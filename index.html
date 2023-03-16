@@ -9,25 +9,9 @@
 </head>
 <body>
 <h1>My posts</h1>
-<template id="single-post">
-    <li class="post-item">
-        <h2></h2>
-        <p></p>
-        <button data-post-id="${posts.id}">SHOW COMMENTS</button>
-    </li>
-</template>
 
-<template id="comments">
-    <li class="comment-item">
-        <h3></h3>
-        <h4></h4>
-        <span></span>
-    </li>
-</template>
-
-<section id="available-posts">
-    <ul class="posts"></ul>
-    <ul class="comments"></ul>
+<section>
+    <div id="posts"></div>
 </section>
 
 <script src="./node_modules/axios/dist/axios.min.js"></script>
