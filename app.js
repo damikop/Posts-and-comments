@@ -1,5 +1,5 @@
 
-import axios from "axios";
+// import axios from "axios";
 // import config from "./apiconfig";
 import {API_URL_posts, config, API_URL_comments} from "./apiconfig.js";
 
