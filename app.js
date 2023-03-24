@@ -1,15 +1,15 @@
-
+// const axios = require('axios').default;
 
 // import axios from "axios";
 // import config from "./apiconfig";
 import {API_URL_posts, config, API_URL_comments} from "./apiconfig.js";
 
-const postListElement = document.querySelector('.posts');
-const postTemplate = document.getElementById('single-post');
-
-const commentListElement = document.querySelector('.comments');
-const commentTemplate = document.getElementById('comments');
-const showCommentsBtn = document.getElementsByTagName('button');
+// const postListElement = document.querySelector('.posts');
+// const postTemplate = document.getElementById('single-post');
+//
+// const commentListElement = document.querySelector('.comments');
+// const commentTemplate = document.getElementById('comments');
+// const showCommentsBtn = document.getElementsByTagName('button');
 
 axios.get(`${config.url}/posts`)
     .then(response => {
